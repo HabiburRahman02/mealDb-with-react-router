@@ -7,6 +7,7 @@ import {
 import Main from './layout/Main/Main';
 import './index.css'
 import Meals from './components/Meals';
+import MealDetails from './components/MealDetails';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,11 @@ const router = createBrowserRouter([
         element: <Meals></Meals>,
         loader: () => fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=b')
       },
+      {
+        path: '/meal/:id',
+        element: <MealDetails></MealDetails>,
+        loader: ({ params }) => fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.id}`)
+      }
     ]
   },
 ]);

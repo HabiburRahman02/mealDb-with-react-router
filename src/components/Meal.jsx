@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 
 const Meal = ({ meal }) => {
-    const { strMeal, strMealThumb, strMeasure5 } = meal
+    const { idMeal, strMeal, strMealThumb, strMeasure5 } = meal;
     return (
         <div className="card bg-base-100 shadow-xl hover:shadow-2xl">
             <figure>
@@ -15,7 +16,9 @@ const Meal = ({ meal }) => {
                     <div className="badge badge-secondary">NEW</div>
                 </h2>
                 <p>Weight: {strMeasure5}</p>
-                <button className="btn w-full">Meal Details</button>
+                <Link to={`/meal/${idMeal}`}>
+                    <button onClick={() => document.getElementById('my_modal_1').showModal()} className="btn w-full">Meal Details</button>
+                </Link>
             </div>
         </div>
     );
