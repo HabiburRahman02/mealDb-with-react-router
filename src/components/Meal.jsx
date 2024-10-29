@@ -1,7 +1,18 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import Modal from "./Modal";
 
 const Meal = ({ meal }) => {
-    const { idMeal, strMeal, strMealThumb, strMeasure5 } = meal;
+    const { strMeal, strMealThumb, strMeasure5 } = meal;
+    const [showModal, setShowModal] = useState(false);
+
+    const handleShowModal = () => {
+        setShowModal(true);
+    }
+
+    const handleClosedModal = () => {
+        setShowModal(false);
+    }
+
     return (
         <div className="card bg-base-100 shadow-xl hover:shadow-2xl">
             <figure>
@@ -16,10 +27,12 @@ const Meal = ({ meal }) => {
                     <div className="badge badge-secondary">NEW</div>
                 </h2>
                 <p>Weight: {strMeasure5}</p>
-                <Link to={`/meal/${idMeal}`}>
-                    <button onClick={() => document.getElementById('my_modal_1').showModal()} className="btn w-full">Meal Details</button>
-                </Link>
+                {/* <Link to={`/meal/${idMeal}`}> */}
+                <button onClick={handleShowModal} className="btn w-full">Meal Details</button>
+                {/* </Link> */}
             </div>
+            <Modal meal={meal} showModal={showModal} handleClosedModal={handleClosedModal}></Modal>
+
         </div>
     );
 };
