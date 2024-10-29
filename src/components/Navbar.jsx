@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <div className="">
+        <div className="bg-gray-200 mb-12 py-2">
             <div className="navbar flex justify-between max-w-7xl mx-auto">
                 <div className="flex">
                     <a className="btn btn-ghost text-xl">daisyUI</a>
