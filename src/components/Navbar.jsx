@@ -5,7 +5,7 @@ const Navbar = () => {
         <div className="bg-gray-200 mb-12 py-2">
             <div className="navbar flex justify-between max-w-7xl mx-auto">
                 <div className="flex">
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <a className="btn btn-ghost text-xl">MealDB</a>
                 </div>
                 <ul className="menu menu-horizontal px-1">
                     <li><Link to='/'>Home</Link></li>

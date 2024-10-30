@@ -14,7 +14,7 @@ const Meal = ({ meal }) => {
     }
 
     return (
-        <div className="card bg-base-100 shadow-xl hover:shadow-2xl">
+        <div className="card bg-base-100 shadow-md hover:shadow-2xl">
             <figure>
                 <img
                     className="h-72 object-cover w-full"
